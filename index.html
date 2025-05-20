@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verma Accounting - All in One</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: sans-serif; }
+    .hidden-section { display: none; }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+<!-- ===== HEADER ===== -->
+<header class="bg-blue-800 text-white sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Verma Accounting</h1>
+    <nav class="space-x-4">
+      <a href="#" onclick="showSection('home')" class="hover:underline">Home</a>
+      <a href="#" onclick="showSection('about')" class="hover:underline">About</a>
+      <a href="#" onclick="showSection('services')" class="hover:underline">Services</a>
+      <a href="#" onclick="showSection('pricing')" class="hover:underline">Pricing</a>
+      <a href="#" onclick="showSection('contact')" class="hover:underline">Contact</a>
+      <a href="#" onclick="showSection('login')" class="hover:underline">Login</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HOME ===== -->
+<section id="home" class="py-20 text-center">
+  <h2 class="text-4xl font-bold mb-4">Professional Accounting Services</h2>
+  <p class="text-lg mb-6">Helping businesses manage their finances with confidence.</p>
+  <button onclick="showSection('contact')" class="bg-blue-700 text-white px-6 py-3 rounded-full hover:bg-blue-900">Get in Touch</button>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="hidden-section max-w-5xl mx-auto py-16 px-4 text-center">
+  <h3 class="text-3xl font-semibold mb-4">About Us</h3>
+  <p>Verma Accounting is a trusted firm with 10+ years helping businesses with financial planning, bookkeeping & tax services.</p>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="hidden-section bg-gray-100 py-16 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h3 class="text-3xl font-semibold text-center mb-10">Our Services</h3>
+    <div class="grid md:grid-cols-4 gap-6 text-center">
+      <div class="p-6 bg-white shadow rounded-lg"> <h4 class="font-bold mb-2">Bookkeeping</h4><p>Accurate financial records.</p></div>
+      <div class="p-6 bg-white shadow rounded-lg"> <h4 class="font-bold mb-2">Tax Filing</h4><p>Compliance & savings.</p></div>
+      <div class="p-6 bg-white shadow rounded-lg"> <h4 class="font-bold mb-2">Payroll</h4><p>Efficient team management.</p></div>
+      <div class="p-6 bg-white shadow rounded-lg"> <h4 class="font-bold mb-2">Auditing</h4><p>Transparency & accuracy.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing" class="hidden-section py-16 px-4 text-center">
+  <h3 class="text-3xl font-semibold mb-10">Pricing Plans</h3>
+  <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
+    <div class="border p-6 rounded-lg shadow"><h4 class="text-xl font-bold mb-2">Basic</h4><p class="text-blue-700 text-2xl font-bold mb-4">₹4,999/month</p><ul><li>✓ Bookkeeping</li><li>✓ Monthly Reports</li></ul></div>
+    <div class="border p-6 rounded-lg shadow bg-blue-50"><h4 class="text-xl font-bold mb-2">Standard</h4><p class="text-blue-700 text-2xl font-bold mb-4">₹9,999/month</p><ul><li>✓ Tax Filing</li><li>✓ Payroll</li></ul></div>
+    <div class="border p-6 rounded-lg shadow"><h4 class="text-xl font-bold mb-2">Premium</h4><p class="text-blue-700 text-2xl font-bold mb-4">₹14,999/month</p><ul><li>✓ All Services</li><li>✓ Priority Support</li></ul></div>
+  </div>
+</section>
+
+<!-- ===== CONTACT (Google Form + Phone) ===== -->
+<section id="contact" class="hidden-section py-16 px-4 text-center">
+  <h3 class="text-3xl font-semibold mb-3">Get in Touch</h3>
+  <p class="mb-6 text-lg">Call us directly: <strong>7009752772</strong></p>
+  <div class="max-w-2xl mx-auto">
+    <!-- Replace the src below with your actual Google Form URL -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdHXXXXX/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
+</section>
+
+<!-- ===== LOGIN SECTION ===== -->
+<section id="login" class="hidden-section py-20 px-4 text-center">
+  <div class="max-w-sm mx-auto bg-white shadow p-8 rounded">
+    <h2 class="text-2xl font-bold mb-4">Admin Login</h2>
+    <input type="text" id="username" placeholder="Username" class="w-full mb-3 p-3 border rounded" />
+    <input type="password" id="password" placeholder="Password" class="w-full mb-3 p-3 border rounded" />
+    <button onclick="login()" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-800">Login</button>
+    <p id="error" class="text-red-500 mt-4 hidden">Invalid credentials</p>
+  </div>
+</section>
+
+<!-- ===== DASHBOARD ===== -->
+<section id="dashboard" class="hidden-section px-6 py-12 bg-gray-100 min-h-screen">
+  <h2 class="text-3xl font-bold mb-6">Admin Dashboard</h2>
+  <div class="grid md:grid-cols-3 gap-6 mb-8">
+    <div class="bg-white shadow p-6 rounded-lg"><h3 class="text-xl font-semibold mb-2">New Clients</h3><p class="text-3xl font-bold">12</p></div>
+    <div class="bg-white shadow p-6 rounded-lg"><h3 class="text-xl font-semibold mb-2">Pending Tasks</h3><p class="text-3xl font-bold">5</p></div>
+    <div class="bg-white shadow p-6 rounded-lg"><h3 class="text-xl font-semibold mb-2">Monthly Revenue</h3><p class="text-3xl font-bold">₹1,20,000</p></div>
+  </div>
+  <div class="bg-white p-6 rounded shadow">
+    <h3 class="text-xl font-semibold mb-4">Recent Messages</h3>
+    <ul class="space-y-2">
+      <li class="border-b pb-2">Ravi Sharma: "Need help with GST filing"</li>
+      <li class="border-b pb-2">Priya Mehta: "Bookkeeping service inquiry"</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-blue-800 text-white text-center py-6 mt-10">
+  <p>&copy; 2025 Verma Accounting. All rights reserved.</p>
+</footer>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+  function showSection(id) {
+    const sections = ["home", "about", "services", "pricing", "contact", "login", "dashboard"];
+    sections.forEach(sec => document.getElementById(sec).style.display = "none");
+    document.getElementById(id).style.display = "block";
+  }
+
+  function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+    if (user === "admin" && pass === "1234") {
+      showSection("dashboard");
+      document.getElementById("error").classList.add("hidden");
+    } else {
+      document.getElementById("error").classList.remove("hidden");
+    }
+  }
+
+  // Show home by default
+  showSection('home');
+</script>
+
+</body>
+</html>
